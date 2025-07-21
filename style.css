@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    /*PRIMARY COLORS*/
+    --primary-color: #4285f4;
+    /*BLUE GOOGLE*/
+    --dark-color: #3367d6;
+    --light-color: #e8f0fe;
+
+    /*SECUNDARY COLORS*/
+    --secundary-color: #DB4437;
+    /*RED GOOGLE*/
+    --secundary-light: #fce8e6;
+    --secundary-dark: #c33d2b;
+
+    /*ACCENT COLORS*/
+    --accent-color: #f4b400;
+    /*YELLOW GOOGLE*/ 
+    --accent-light: #fefee0;
+    --accent-dark: #e09c00;
+    
+    /*NEUTRALS AND BACKGROUND*/
+    --background-color: #ffffff;
+    --surface-color: #f5f5f5;
+    --border-color: #e0e0e0;
+    
+    /*TIPOGRAFÍA*/
+    --text-color: #202124;
+    /*VERY DARK BLACK-GRAY*/
+    --secundary-text-color: #5F6368;
+    /*GRAY MEDIUM*/
+    --text-inverted: #ffffff;
+
+    /*OTHER POSSIBLE COMPLEMENTARY COLORS FROM GOOGLE*/
+    --success-color: #0f9d58;
+    /*GREEN GOOGLE*/
+    --info-color: #4285f4;
+    --warning-color: #f4b400;
+    --error-color: #db4437;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-image: url('/img/rm380-13.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/*HEADER*/
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 9rem;
+    background-color: transparent;
+    margin-top: 2rem;
+}
+
+#logo {
+    width: 6rem;
+    border-radius: 50%;
+    /*text-shadow: 0 2px 5px rgba(0, 0, 0, .9);*/
+    margin-bottom: 0.5rem;
+    /*border: 0.2rem solid var(--border-color);*/
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#marca, #marca2, #marca3, #marca4, #marca5, #marca6 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+
+#marca7 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 3.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.navbar-left #marca {
+    color: var(--primary-color);
+}
+
+.navbar-left #marca2 {
+    color: var(--secundary-color);
+}
+
+.navbar-left #marca3 {
+    color: var(--accent-color);
+}
+
+.navbar-left #marca4 {
+    color: var(--primary-color);
+}
+
+.navbar-left #marca5 {
+    color: var(--success-color);
+}
+
+.navbar-left #marca6 {
+    color: var(--secundary-color);
+}
+
+.navbar-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-right nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    padding: 1.5rem 2rem;
+}
+
+.navbar-right nav a:hover {
+    transition: color 0.3s ease;
+    background-color: rgba(66, 133, 244, 0.1);
+    border-radius: 5rem;
+}
+
+.navbar-right ul {
+    margin-left: 1.2rem;
+}
+
+.navbar-right ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/*MENÚ HAMBURGUESA*/
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 2.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    height: 0.4rem;
+    background: var(--secundary-text-color);
+    border-radius: 0.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/*ANIMACIÓN MENÚ HAMBURGUESA*/
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(0.9rem) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-0.9rem) rotate(-45deg);
+}
+
+/*MENÚ NAV HAMBURGUESA*/
+.mobile-nav {
+    position: absolute;
+    top: 9rem;
+    right: 9rem;
+    background: var(--background-color);
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    z-index: 1000;
+    display: none;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 1.5rem 1rem;
+}
+
+.mobile-nav ul li {
+    margin: 2rem 2rem;
+}
+
+.mobile-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+    transition: color 0.5s ease-in-out;
+    border-radius: 5rem;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+/*PRESENTATION*/
+
+.container {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.presentation-container, #photo-box {
+    flex: 1;
+}
+
+#presentation .presentation-container {
+    width: 60%;
+    height: 100%;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.presentation-container main {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.greeting {
+    font-size: 2.5rem;
+    font-family: 'roboto mono', monospace;
+    /*text-shadow: 0 2px 5px rgba(0, 0, 0, .9);*/
+    color: var(--text-color);
+}
+
+.my-name, .my-name2, .my-name3, .my-name4, .my-name5 {
+    font-size: 6rem;
+    font-weight: 700;
+    /*text-shadow: 0 2px 5px rgba(0, 0, 0, .9);*/
+    margin-bottom: 1rem;
+    font-family: 'montserrat alternates', sans-serif;
+}
+
+.my-name {
+    color: var(--primary-color);
+}
+
+.my-name2 {
+    color: var(--secundary-color);
+}
+
+.my-name3 {
+    color: var(--accent-color);
+}
+
+.my-name4 {
+    color: var(--success-color);
+}
+
+.my-name5 {
+    color: var(--primary-color);
+}
+
+.last-name {
+    font-size: 6rem;
+    font-weight: 500;
+    color: var(--text-color);
+    /*text-shadow: 0 2px 5px rgba(0, 0, 0, .9);*/
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'montserrat alternates', sans-serif;
+}
+
+#profession {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    /*background: linear-gradient(45deg, var(--primary-color), var(--secundary-color), var(--accent-color), var(--success-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;*/
+    /*color: var(--border-color);*/
+    top: 1rem;
+    margin-top: 1rem;
+    font-family: 'roboto mono', monospace;
+}
+
+.button-contact {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5rem;
+    font-family: 'roboto mono', monospace;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, .9);*/
+}
+
+.button-contact:hover {
+    background-color: var(--dark-color);
+}
+
+.button-contact a {
+    color: var(--background-color);
+    text-decoration: none;
+}
+
+#photo-box {
+    width: 40rem;
+    height: 40rem;
+    margin-right: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#photo-box img {
+    width: 40rem;
+    height: 40rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*FOOTER*/
+footer {
+    background-color: transparent;
+    padding-right: 10rem;
+    
+    height: 12rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: start;
+}
+
+.footer-container ul {
+    column-count: 3;
+    margin-top: 3rem;
+    column-gap: 6rem;
+    list-style-position: inside;
+}
+
+.footer-container ul li {
+    color: var(--secundary-text-color);
+    font-family: 'roboto mono', monospace;
+    font-size: 1.5rem;
+    margin-left: 10rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+.footer-container i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.footer-container #location {
+    margin-right: 1.5rem;
+    font-size: 2.2rem;
+}
+
+footer hr {
+    border-top-color: var(--secundary-text-color);
+    opacity: 0.5;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 9rem;
+    right: 9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.copyright-text {
+    color: var(--secundary-text-color);
+    font-family: 'roboto mono', monospace;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.copyright-text a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .header-nav {
+        padding: 0 2rem;
+    }
+
+    .navbar-left {
+        flex-direction: column;
+        background-color: #000;
+        align-items: center;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        top: 2rem;
+        right: 1rem;
+        position: absolute;
+    }
+
+   .mobile-nav {
+        position: fixed;
+        top: 6rem;
+        right: 0;
+        width: 50%;
+        height: 25rem;
+        background-color: var(--background-color);
+        padding: 4rem 1rem;
+    }
+        /*        
+        
+    .mobile-nav.active {
+        display: block;
+    }
+
+    #photo-box {
+        width: 30rem;
+        height: 30rem;
+        margin-right: 0;
+    }
+
+    #photo-box img {
+        width: 30rem;
+        height: 30rem;
+    }*/
+}
